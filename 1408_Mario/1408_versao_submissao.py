@@ -1,14 +1,9 @@
 # HELP: O que não estou conseguindo é tratar o input, creio que isto é o problema para o URI aceitar.
-entrada_dados = input().splitlines()
-
-resultado = []
-
-for k in range(len(entrada_dados) - 1):
-    infos_pedido = [int(x) for x in entrada_dados[2*k].split()]
+while True:
+    infos_pedido = list(map(int, input().split()))
     if sum(infos_pedido) == 0:
         break
-    lista_armarios = [int(x) for x in entrada_dados[2*k+1].split()]
-
+    lista_armarios = list(map(int, input().split()))
     i = 0
     j = 0
     lista_qtdes_por_sequencia_buscada = []
@@ -26,10 +21,9 @@ for k in range(len(entrada_dados) - 1):
             i += 1
             dif_listas = len(set(sequencia_procurada) - set(recorte_lista_armarios))
             lista_qtdes_por_sequencia_buscada.append(dif_listas)
-        resultado.append(min(lista_qtdes_por_sequencia_buscada))
+        resultado = min(lista_qtdes_por_sequencia_buscada)
 
     else:
-        resultado.append(0)
+        resultado = 0
 
-for numero in resultado:
-    print(numero)
+    print(resultado)

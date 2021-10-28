@@ -6,10 +6,10 @@ import random
 import pyperclip
 
 string = ''
-qtde_seq = 100
+qtde_seq = 1
 while qtde_seq > 0:
     qtde_seq -= 1
-    tamanho_array = random.randint(1, 10)
+    tamanho_array = random.randint(80000, 99999)
     qtde_pedidos = random.randint(1, tamanho_array)
     lista = sorted(random.sample(range(tamanho_array*3), tamanho_array))
     lista = list(map(str, lista))
@@ -19,5 +19,5 @@ while qtde_seq > 0:
 
 string += string + "\n0 0"
 
-print(string)
+#print(string)
 pyperclip.copy(string)
